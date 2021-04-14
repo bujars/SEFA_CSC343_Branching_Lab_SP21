@@ -2,6 +2,8 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use work.SEFA_BRANCHING_PACKAGE.all;
 
+-- the purpose of this component is to hold the 16 bit immediate value. 
+
 
 entity SEFA_IMM16_REGISTER IS
 	generic (SEFA_N: integer := 16); -- NOTE this is 16 bits wide, as per IMM16 (16 bits)
