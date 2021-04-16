@@ -17,7 +17,7 @@ ENTITY SEFA_Branching_MUX IS
 	);
 END SEFA_Branching_MUX;
 
-ARCHITECTURE arch IS SEFA_Branching_MUX
+ARCHITECTURE arch OF SEFA_Branching_MUX IS
 BEGIN
 	SEFA_PC_Address <= SEFA_Adder_PC_IMM16_Plus_4 WHEN SEFA_PC_SELECTOR = '1'
 							ELSE SEFA_Adder_PC_Plus_4;

@@ -12,12 +12,11 @@ entity SEFA_Comparator_N IS
 	GENERIC(SEFA_N : INTEGER := 32);
 	PORT(
 			SEFA_IN0, SEFA_IN1 : IN STD_LOGIC_VECTOR(SEFA_N-1 DOWNTO 0);
-			SEFA_OUT : OUT STD_LOGIC;
-	
+			SEFA_OUT : OUT STD_LOGIC
 	);
 end SEFA_Comparator_N;
 	
-ARCHITECTURE arch IS SEFA_Comparator_N 
+ARCHITECTURE arch OF SEFA_Comparator_N IS 
 
 BEGIN
 
@@ -28,7 +27,7 @@ BEGIN
 		ELSE
 			SEFA_OUT <= '0'; -- return false if all bits are not the same
 		END IF;
-	END PROCESS:
+	END PROCESS;
 	
 END arch; 
 
