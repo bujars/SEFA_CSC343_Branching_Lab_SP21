@@ -55,15 +55,15 @@ BEGIN
 
 	-- we manually set the code for bne, beq
 	
-	
-	COMPUTE_NEXT_PC : SEFA_COMPUTE_NAL_FROM_IR_VAL PORT MAP (
-		SEFA_IR_REGISTER_VALUE => SEFA_IR_VALUE,
-		SEFA_clk => SEFA_clk, 
-		SEFA_PC_NEW => SEFA_PC_NEW
-	
-	
-	
-	);
+--	
+--	COMPUTE_NEXT_PC : SEFA_COMPUTE_NAL_FROM_IR_VAL PORT MAP (
+--		SEFA_IR_REGISTER_VALUE => SEFA_IR_VALUE,
+--		SEFA_clk => SEFA_clk, 
+--		SEFA_PC_NEW => SEFA_PC_NEW
+--	
+--	
+--	
+--	);
 	
 	
 	

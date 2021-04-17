@@ -162,18 +162,30 @@ COMPONENT SEFA_INSTRUCTION_MEMORY IS
 END COMPONENT SEFA_INSTRUCTION_MEMORY;
 
 
+--COMPONENT SEFA_COMPUTE_NAL_FROM_IR_VAL IS 
+--PORT(
+--	SEFA_IR_REGISTER_VALUE : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+--	SEFA_clk : IN STD_LOGIC;
+----	SEFA_wren: in std_logic; -- write enable (if it is 0, the stored data will not change)
+----	SEFA_rden: in std_logic; -- read enable (only when it is 1, the stored data will be displayed to output)
+----	SEFA_chen: in std_logic; --  chip enable (if it is 0, the output will be undefined)
+--	
+--	SEFA_PC_NEW : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) -- uSING THIS FOR NOW B/C
+--	-- IM NOT SURE WHAT THE OUTPUT IS SUPPOSED TO BE. 
+--);
+--END COMPONENT SEFA_COMPUTE_NAL_FROM_IR_VAL;
+
+
 COMPONENT SEFA_COMPUTE_NAL_FROM_IR_VAL IS 
-PORT(
-	SEFA_IR_REGISTER_VALUE : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SEFA_clk : IN STD_LOGIC;
---	SEFA_wren: in std_logic; -- write enable (if it is 0, the stored data will not change)
---	SEFA_rden: in std_logic; -- read enable (only when it is 1, the stored data will be displayed to output)
---	SEFA_chen: in std_logic; --  chip enable (if it is 0, the output will be undefined)
-	
-	SEFA_PC_NEW : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) -- uSING THIS FOR NOW B/C
-	-- IM NOT SURE WHAT THE OUTPUT IS SUPPOSED TO BE. 
+PORT(	
+	 RS_VALUE : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+	 RT_VALUE : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+	 PC_VALUE : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+	 IMM16_VAL : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SEFA_PC_NEW : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)  
 );
 END COMPONENT SEFA_COMPUTE_NAL_FROM_IR_VAL;
+
 
 COMPONENT SEFA_SIGN_EXTEND_IMM_16_TO_32 IS
 PORT (
